@@ -46,39 +46,82 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
+```
+1.Open a new project using Quartus II.
+2.Declare the inputs and outputs inside module projname().
+3.Set the reset value using register.
+4.Use commands like begin and end to stimulate the counter.
+5.For Up counter increment the count and for Down counter decrement the count.
+6.End the verilog programming.
+```
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Meena .S
+RegisterNumber: 212221240028
+```
+## Using Up-counter
+```
+module up_c(clock,reset,upcounter);
+input clock,reset;
+output reg[2:0] upcounter;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+upcounter=3'b 000;
+else
+upcounter=upcounter+1;
+end endmodule
+```
+
+
+
+
+
+### RTL LOGIC UP COUNTER
+![image](https://user-images.githubusercontent.com/94677128/201694923-920b4ba9-1145-4651-8afa-5aa60d540709.png)
+### TIMING DIGRAMS FOR COUNTER
+![image](https://user-images.githubusercontent.com/94677128/201695002-78c56567-1318-4d47-87da-93d97ed7ef11.png)
+### TRUTH TABLE
+![image](https://user-images.githubusercontent.com/94677128/201695092-038dbd32-4625-4afd-8ac5-c93ce999bf59.png)
+### Using Down-counter
+```
+module do_wn(clock,reset,downcounter);
+input clock,reset;
+output reg[3:0] downcounter;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+downcounter=4'b 000;
+else
+downcounter=downcounter+1;
+end endmodule
+```
+### RTL LOGIC UP COUNTER
+![image](https://user-images.githubusercontent.com/94677128/201695255-a7fcfbef-1ee0-4d4b-b267-c8e2a09b6214.png)
+### TIMING DIGRAMS FOR COUNTER
+![image](https://user-images.githubusercontent.com/94677128/201695350-b3aa4c7c-f008-4ce7-8e32-bc1e4c58391b.png)
+
+### TRUTH TABLE
+![image](https://user-images.githubusercontent.com/94677128/201695422-1f939574-b334-4d07-b1de-14f84700e268.png)
 
 
 
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+
+
+
+ 
 
 
 
 
 
 
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
 
 
 
@@ -86,3 +129,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+Hence the Four bit Up counter and Down counter is implemented successfully and its functionality is validated.
